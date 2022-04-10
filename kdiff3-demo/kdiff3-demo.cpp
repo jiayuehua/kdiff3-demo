@@ -2,20 +2,17 @@
 //
 
 #include "kdiff3-demo.h"
-#include <iostream>
 #include <algorithm>
-#include <vector>
+#include <deque>
+#include <iostream>
+#include <functional>
 
 using namespace std;
 
-
-
 int main()
 {
-  std::vector<int> v1{ 1,3,5,9,7 };
-  std::sort(v1.begin(), v1.end(), [](int l, int r) {
-    return l > r;
-    });
+  std::deque<int> v{ 1,2,9,5,7 };
+  std::sort(v.begin(), v.end(), std::greater{});
   cout << "Hello CMake." << endl;
   return 0;
 }
